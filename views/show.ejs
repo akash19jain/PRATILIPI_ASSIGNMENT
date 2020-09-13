@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EXPLORE SIKKIM</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+	<style>
+      .heading {
+        text-align: center;
+      }
+      .image {
+      	text-align: center;
+      	padding-top: 10px;
+
+      }
+      .content {
+      	padding-top: 20px;
+      	padding-left: 10px;
+      	padding-right: 10px;
+      }
+      .heading {
+      	font-weight: bold;
+      	color: red;
+      }
+      .visitors {
+      	color: black;
+      }
+    </style>
+</head>
+<body>
+	<div>
+		<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="/stories"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>  EXPLORE SIKKIM</a>
+					</div>
+					<div class="collapse navbar-collapse">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="/logout">LOGOUT</a></li>
+						</ul>
+					</div>
+				</div>
+		</nav>
+	</div>
+	<div class="jumbotron container">
+		<div class="heading">
+			<h1><%= story.title %></h1>
+		</div>
+		<div class="image">
+			<img src="<%=story.image%>" class="img-rounded" style="width:50%;height:50%;">
+		</div>
+		<div>
+			<p><span class="glyphicon glyphicon-eye-open visitors" aria-hidden="true"><%= count %></span></p>
+		</div>
+		<div class="content">
+			<p class="bg-info"><%= story.body%></p>
+		</div>
+		<div  class="date">
+			<%= story.created.toDateString()%>
+		</div>
+		
+		
+		
+	</div>
+</body>
+</html>

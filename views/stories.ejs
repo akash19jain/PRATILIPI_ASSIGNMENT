@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EXPLORE SIKKIM</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+	<style>
+		.heading h1{
+			font-weight: bold;
+			color: red;
+		}
+		.heading h3{
+			color: blue;
+		}
+	</style>
+	
+</head>
+<body>
+	<div>
+		<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="/stories"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>  EXPLORE SIKKIM</a>
+					</div>
+					<div class="collapse navbar-collapse">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="/logout">LOGOUT</a></li>
+						</ul>
+					</div>
+				</div>
+		</nav>
+	</div>
+	<div class="container">
+		<% if(error && error.length > 0 ){ %>
+			<div class="alert alert-danger" role="alert"><%= error %></div>
+		<% } %>
+		<% if(success && success.length > 0 ){ %>
+			<div class="alert alert-success" role="alert"><%= success %></div>
+		<% } %>
+
+	</div>
+	<div class="container">
+		<div class="jumbotron heading">
+			<h1> WELCOME TO EXPLORE SIKKIM </h1>
+			<h3> SIKKIM...THE LAND OF THE SUPERLATIVES</h3>
+			<br>
+			<p> View Stories about some famous places to visit in Sikkim </p>
+		</div>
+	
+		<div class="row">
+			<% stories.forEach(function(story){ %>
+				<div class="eachstory col-md-3 col-sm-6">
+					<div class="thumbnail">
+						<div class="caption">
+							<a href="/stories/<%= story._id %>"><%= story.title%></a>
+						</div>
+						<img src="<%=story.image%>">
+						<span><%= story.created.toDateString()%></span>
+						<br><br>
+						<p><%= story.body.substring(0,100)%>......</p>
+						
+						
+						<form action="/stories/<%= story._id %>">
+							<input type="submit" class="btn btn-info" value="Read More">
+						</form>
+					</div>
+					
+
+				</div>
+
+			<% }) %>
+		</div>
+	</div>
+</body>
+</html>

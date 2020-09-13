@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>REGISTER</title>
+	<link rel="stylesheet" type="text/css" href="assets/register.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+
+</head>
+<body>
+	<div class="container">
+		<% if(error && error.length > 0 ){ %>
+			<div class="alert alert-danger" role="alert"><%= error %></div>
+		<% } %>
+		<% if(success && success.length > 0 ){ %>
+			<div class="alert alert-success" role="alert"><%= success %></div>
+		<% } %>
+
+	</div>
+	<div class="login-box">
+		 <img src="assets/profile_pic.png" class="profile-pic">
+		<h1> REGISTRATION</h1>
+		<form action="/register" method="POST">
+			<input type="text" name="username" placeholder="ENTER USERNAME">
+			<input type="password" name="password" placeholder="ENTER PASSWORD">
+			<input type="submit" name="submit" value="REGISTER">
+
+			 <a href="/home">Already have an account!!?</a>
+		</form>
+	</div>
+</body>
+</html>
