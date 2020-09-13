@@ -3,7 +3,8 @@
 ### MANIPAL UNIVERSITY JAIPUR
 <br><br>
 
-The Project can be accessed from : https://pratilipi-akashjain.herokuapp.com/
+### The Project can be accessed from :
+https://pratilipi-akashjain.herokuapp.com/
 
 Some Features of the Assignment:
 1) The `/stories` page cannot be accessed until the user is logged in.
@@ -13,7 +14,7 @@ Some Features of the Assignment:
 5) Appropraite messages are being displayed if the user enters invalid credentials while logging or registring.
 6) The `logout` button takes you back to the `/home` page from where a user can log back.
 
-Currently only one user has been registered whose credentials are as followed:<br>
+Currently only one user has been registered whose credentials are as follows:<br>
 ```
  username: "akash"
  password: "akash"
